@@ -18,9 +18,9 @@ public class Run extends Application {
         this.yPositions = data.getYPositions();
 
         stage.setTitle("Double Slit experiment Plot");
-        NumberAxis xAxis = new NumberAxis(-0.001, 0.001, 0.001);
-        NumberAxis yAxis = new NumberAxis(0, 1, 0.1);
-        ScatterChart<Number, Number> plot = new ScatterChart<Number, Number>(xAxis, yAxis);
+        NumberAxis xAxis = new NumberAxis(-0.001, 0.001, 0.0005);
+        NumberAxis yAxis = new NumberAxis(0, 1, 0.05);
+        ScatterChart<Number, Number> plot = new ScatterChart<>(xAxis, yAxis);
         xAxis.setLabel("location on the screen on the x axis");
         yAxis.setLabel("Location on the screen on the y axis");
         plot.setTitle("Double Slit Experiment Plot");
@@ -32,7 +32,9 @@ public class Run extends Application {
 
         }
 
-        Scene scene = new Scene(plot, 500, 500);
+        plot.getData().addAll(series1);
+
+        Scene scene = new Scene(plot, 700, 700);
         stage.setScene(scene);
         stage.show();
     }
