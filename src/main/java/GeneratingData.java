@@ -4,7 +4,7 @@ import java.util.Random;
 public class GeneratingData {
 
     Simulation simulation;
-    double numOfParticles = Math.pow(10, 3);
+    double numOfParticles = Math.pow(10, 6);
     ArrayList<Double> xPositions = new ArrayList<>();
     ArrayList<Double> yPositions = new ArrayList<>();
     public GeneratingData(Simulation simulation) {
